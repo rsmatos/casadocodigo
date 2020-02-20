@@ -30,6 +30,16 @@ public class Usuario implements UserDetails {
 		inverseJoinColumns = @JoinColumn(name = "role_nome"))
 	private List<Role> roles = new ArrayList<>();
 
+	public Usuario() {
+		
+	}
+	
+	public Usuario(String nome, String email, List<Role> roles) {
+		this.nome = nome;
+		this.email = email;
+		this.roles = roles;
+	}
+
 	public String getEmail() {
 		return email;
 	}

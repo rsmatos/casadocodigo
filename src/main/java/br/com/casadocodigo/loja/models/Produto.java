@@ -14,6 +14,8 @@ import javax.persistence.Id;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 @Entity
 public class Produto implements Serializable{
 	
@@ -32,6 +34,7 @@ public class Produto implements Serializable{
 	private List<Preco> precos = new ArrayList<>();
 	
 	@DateTimeFormat
+	@JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy", timezone = "America/Sao_Paulo")
 	private Calendar dataLancamento;
 	
 	public String getTitulo() {
